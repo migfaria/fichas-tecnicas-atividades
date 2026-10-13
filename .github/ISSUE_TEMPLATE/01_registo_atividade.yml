@@ -1,0 +1,52 @@
+name: "1. Registo de Nova Atividade"
+description: "Formulário para registar um novo evento ou atividade"
+title: "[REGISTO]: "
+labels: ["registo-atividade"]
+body:
+  - type: input
+    id: nome_atividade
+    attributes:
+      label: "Nome da Atividade"
+      placeholder: "Ex: Pão-por-Deus e Halloween"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo_atividade
+    attributes:
+      label: "Tipo de Atividade"
+      options:
+        - "Atividade"
+        - "Projeto"
+        - "Visita de Estudo"
+        - "Ação"
+    validations:
+      required: true
+
+  - type: input
+    id: ano_letivo
+    attributes:
+      label: "Ano Letivo"
+      placeholder: "2025/2026"
+    validations:
+      required: true
+
+  - type: input
+    id: responsavel
+    attributes:
+      label: "Responsável"
+      placeholder: "Nome do Docente / Responsável"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: metas_pee
+    attributes:
+      label: "Enquadramento PAA / PEE (Metas Selecionadas)"
+      options:
+        - label: "Meta 1 - Anualmente realizar seis Reuniões de Conselho de Turma de forma a colmatar as fragilidades identificadas na Turma/Grupo"
+        - label: "Meta 2 - Anualmente 75% dos alunos devem atingir as menções de Bom e Muito Bom no português"
+        - label: "Meta 3 - Anualmente 75% dos alunos devem atingir as menções de Bom e Muito Bom na Matemática"
+        - label: "Meta 4 - Anualmente cada professor tem que realizar pelo menos 6 atividades por área curricular em cada período com recurso às tecnologias"
+        - label: "Meta 5 - Anualmente realizar dois questionários para a comunidade escolar"
+        - label: "Meta 6 - Envolver os Encarregados de Educação em 6 atividades/ações/projetos anuais"
