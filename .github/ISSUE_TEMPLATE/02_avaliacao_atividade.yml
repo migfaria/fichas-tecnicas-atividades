@@ -1,0 +1,40 @@
+name: "2. Avaliação de Atividade"
+description: "Formulário para o avaliador classificar a atividade"
+title: "[AVALIAÇÃO]: "
+labels: ["avaliacao-atividade"]
+body:
+  - type: input
+    id: numero_issue_registo
+    attributes:
+      label: "Número do Issue / Registo da Atividade"
+      description: "Insira o número do registo da atividade a avaliar (ex: #1)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pontuacao
+    attributes:
+      label: "Pontuação / Média da Avaliação (1 a 5)"
+      options:
+        - "1.0"
+        - "2.0"
+        - "3.0"
+        - "4.0"
+        - "4.8"
+        - "5.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: resultados
+    attributes:
+      label: "Resultados Obtidos"
+      placeholder: "Descreva o impacto e correspondência com as expectativas..."
+    validations:
+      required: true
+
+  - type: input
+    id: evidencias_url
+    attributes:
+      label: "Link / Referência das Evidências"
+      placeholder: "URL das fotos ou número da evidência"
