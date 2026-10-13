@@ -3,83 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Gestão de Atividades</title>
+    <title>Portal de Atividades e Avaliações</title>
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 100%;
-            padding: 30px;
-            text-align: center;
-        }
-        .header-title {
-            color: #1a365d;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .header-subtitle {
-            color: #718096;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-        .card-button {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            background-color: #ffffff;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 16px;
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: #2d3748;
-            transition: all 0.2s ease-in-out;
-        }
-        .card-button:hover {
-            border-color: #3182ce;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.15);
-        }
-        .icon {
-            font-size: 28px;
-            margin-right: 15px;
-        }
-        .text-container {
-            text-align: left;
-        }
-        .btn-title {
-            font-weight: bold;
-            font-size: 16px;
-            color: #2b6cb0;
-        }
-        .btn-desc {
-            font-size: 12px;
-            color: #718096;
-            margin-top: 2px;
-        }
-        .footer {
-            margin-top: 20px;
-            font-size: 11px;
-            color: #a0aec0;
-        }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #f4f6f9; color: #333; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { background: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); max-width: 800px; width: 100%; padding: 30px; text-align: center; margin-bottom: 20px; }
+        .header-title { color: #1a365d; font-size: 24px; font-weight: bold; margin-bottom: 8px; }
+        .header-subtitle { color: #718096; font-size: 14px; margin-bottom: 25px; }
+        .nav-buttons { display: flex; gap: 15px; justify-content: center; margin-bottom: 10px; }
+        .btn { padding: 12px 24px; font-size: 15px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        .btn-registo { background-color: #0078d4; color: white; } /* Azul Microsoft */
+        .btn-avaliacao { background-color: #107c41; color: white; } /* Verde Excel/Office */
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .form-container { width: 100%; max-width: 800px; display: none; background: #fff; padding: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        iframe { width: 100%; height: 750px; border: none; border-radius: 8px; }
     </style>
 </head>
 <body>
@@ -88,28 +25,36 @@
         <div class="header-title">Plataforma de Atividades</div>
         <div class="header-subtitle">EB1/PE do Covão e Vargem</div>
 
-        <!-- BOTÃO 1: REGISTO -->
-        <a href="https://github.com/migfaria/fichas-tecnicas-atividades/issues/new?template=01_registo_atividade.yml" class="card-button" target="_blank">
-            <span class="icon">📝</span>
-            <div class="text-container">
-                <div class="btn-title">Registar Nova Atividade</div>
-                <div class="btn-desc">Preencher enquadramento, responsável e metas do PEE</div>
-            </div>
-        </a>
-
-        <!-- BOTÃO 2: AVALIAÇÃO -->
-        <a href="https://github.com/migfaria/fichas-tecnicas-atividades/issues/new?template=02_avaliacao_atividade.yml" class="card-button" target="_blank">
-            <span class="icon">⭐</span>
-            <div class="text-container">
-                <div class="btn-title">Avaliar Atividade</div>
-                <div class="btn-desc">Atribuir pontuação, resultados obtidos e evidências</div>
-            </div>
-        </a>
-
-        <div class="footer">
-            Sistema de Gestão de Fichas Técnicas • GitHub Pages
+        <div class="nav-buttons">
+            <button class="btn btn-registo" onclick="mostrarFormulario('registo')">📝 Registar Atividade</button>
+            <button class="btn btn-avaliacao" onclick="mostrarFormulario('avaliacao')">⭐ Avaliar Atividade</button>
         </div>
     </div>
+
+    <!-- ÁREA DO FORMULÁRIO 1: REGISTO (MICROSOFT FORMS) -->
+    <div id="sec-registo" class="form-container">
+        <!-- SUBSTITUA O LINK ABAIXO PELO LINK DO SEU MICROSOFT FORMS DE REGISTO -->
+        <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=bgXYTcRCZk6U0SwtE8-ACQ0canR1l1pLms1JUXBKaMJUNFNEMkwzR0ZITElYNVVOTkIwMEYzMDlBOS4u" allowfullscreen></iframe>
+    </div>
+
+    <!-- ÁREA DO FORMULÁRIO 2: AVALIAÇÃO (MICROSOFT FORMS) -->
+    <div id="sec-avaliacao" class="form-container">
+        <!-- SUBSTITUA O LINK ABAIXO PELO LINK DO SEU MICROSOFT FORMS DE AVALIAÇÃO -->
+        <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=bgXYTcRCZk6U0SwtE8-ACQ0canR1l1pLms1JUXBKaMJURThYMElRRDhCT0ZKRFI4UEhXTTBETUIzUy4u" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function mostrarFormulario(tipo) {
+            document.getElementById('sec-registo').style.display = 'none';
+            document.getElementById('sec-avaliacao').style.display = 'none';
+
+            if(tipo === 'registo') {
+                document.getElementById('sec-registo').style.display = 'block';
+            } else if(tipo === 'avaliacao') {
+                document.getElementById('sec-avaliacao').style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
